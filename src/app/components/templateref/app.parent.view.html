@@ -1,0 +1,22 @@
+<h1>The Parent Component</h1>
+
+<input type="text" #ip class="form-control">
+<br/>
+<input type="button" value="Send to Same Component" (click)="send(ip)" class="btn btn-warning">
+<br/>
+<app-child-component #child></app-child-component>
+<br/>
+<input type="button" value="Send Value to Child Component" (click)="pass(child)" class="btn btn-warning">
+<br/>
+<app-other-child-component #otherChildComponent></app-other-child-component>
+<br/>
+<input type="button" value="Send Value to Other Child Component" (click)="sendpass()" class="btn btn-warning">
+<br/>
+<h3>Using the Parent-Child Communication using @Input</h3>
+<div class="container">
+  <input type="text" class="form-control" [(ngModel)]="message">
+  <app-actual-child-component
+   [Message]="message"
+  ></app-actual-child-component>
+</div>
+

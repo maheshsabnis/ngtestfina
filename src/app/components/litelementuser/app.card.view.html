@@ -1,0 +1,27 @@
+<h1>Using the LitElement</h1>
+<form [formGroup]="frmUser">
+<div class="container">
+   <div class="form-control">
+     <label>ID</label>
+     <input type="text" formControlName="id"/>
+   </div>
+   <div class="form-control">
+    <label>fullName</label>
+    <input type="text" formControlName="fullName"/>
+  </div>
+  <div class="form-control">
+    <label>role</label>
+    <input type="text" formControlName="role"/>
+  </div>
+  <div class="form-control">
+    <label>avatar</label>
+    <input type="text" formControlName="avatar"/>
+  </div>
+  <div class="form-control">
+    <button class="btn btn-warning" (click)="clear()">Clear</button>
+    <button class="btn btn-success" (click)="save()">Update</button>
+  </div>
+</div>
+</form>
+
+<card-user #card [user]="user1" (edit)="edit($event)"></card-user>
